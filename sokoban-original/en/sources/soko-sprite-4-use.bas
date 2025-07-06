@@ -4,8 +4,8 @@
 ---         2,4,6,8 : Magick wall 8=Up, 2=Down, 4=Left, 6=Right
 ---         5 : Fal
 770 COLOR 1:PUT@A(X*2,Y)-(X*2+1,Y),AR%
---- #include soko-keyboard-1235.bas
-#include soko-keyboard-ijkl.bas
+#include soko-keyboard-1235.bas
+--- #include soko-keyboard-ijkl.bas
 880 GOTO 780
 890 PUT@A(X*2,Y)-(X*2+1,Y),AU%:Q%(X,Y)=0:IF Z<>1 THEN PUT@A(X2*2,Y2)-(X2*2+1,Y2),AB%:Q%(X2,Y2)=0:GOTO 930 ELSE 930
 900 PUT@A(X*2,Y)-(X*2+1,Y),AD%:Q%(X,Y)=0:IF Z<>1 THEN PUT@A(X2*2,Y2)-(X2*2+1,Y2),AB%:Q%(X2,Y2)=0:GOTO 930 ELSE 930

@@ -3,7 +3,7 @@
 #include soko-start-screen.bas
 300 DIM HX%(50),HY%(50),Q%(32,19)
 #include soko-sprite-4-create.bas
-705 COLOR 2:LOCATE 32,16:PRINT "Press SPACE to start !"
+705 COLOR 6:LOCATE 32,18:PRINT "Press SPACE to start !"
 710 A$=INPUT$(1)
 720 IF A$=" " THEN W%=1:GOTO 740
 730 GOTO 710
