@@ -1,0 +1,49 @@
+---------------------------------------------------------
+--- 4x4 pixels, 2x1 chars, sprites AB,AL,AR,AD,AU,AN,AK
+---------------------------------------------------------
+310 DIM AR%(4),AL%(4),AU%(4),AD%(4),AN%(4),AK%(4),AB%(4)
+--- AB = BLANK
+320 GET@A(0,0)-(1,0),AB%
+--- AR = RIGHT: 20,0         --- DATA R
+330 READ X1,Y1,X2,Y2
+340 READ X,Y,C
+350 IF X=0 AND Y=0 THEN 380
+360 PSET(X,Y,C)
+370 GOTO 340
+380 GET@A(X1,Y1)-(X2,Y2),AR%
+--- 381 PUT@A(X1,Y1)-(X2,Y2),AB%
+--- AL = LEFT:  20,10        --- DATA L
+390 READ X1,Y1,X2,Y2
+400 READ X,Y,C
+410 IF X=0 AND Y=0 THEN 440
+420 PSET(X,Y,C)
+430 GOTO 400
+440 GET@A(X1,Y1)-(X2,Y2),AL%
+--- AU = UP:    20,20        --- DATA U
+450 READ X1,Y1,X2,Y2
+460 READ X,Y,C
+470 IF X=0 AND Y=0 THEN 500
+480 PSET(X,Y,C)
+490 GOTO 460
+500 GET@A(X1,Y1)-(X2,Y2),AU%
+--- AD = DOWN:  20,30        --- DATA D
+510 READ X1,Y1,X2,Y2
+520 READ X,Y,C
+530 IF X=0 AND Y=0 THEN 560
+540 PSET(X,Y,C)
+550 GOTO 520
+560 GET@A(X1,Y1)-(X2,Y2),AD%
+----------------------------------------------------- DIRECT DRAWED LINES SPRITES --------------------
+--- AN = BOX:   20,40 : 10,10
+570 COLOR 1:LINE(20,40)-(23,43),PSET,4,BF
+--- 580 LINE(25,40)-(25,43),PRESET
+--- 590 LINE(20,41)-(27,41),PRESET
+620 PRESET(20,40):PRESET(23,40)
+630 PRESET(20,43):PRESET(23,43)
+640 GET@A(10,10)-(11,10),AN%
+--- AK = WALL:  20,48 : 10,12
+650 COLOR 2:LINE(20,48)-(23,51),PSET,3,BF
+670 LINE(21,48)-(21,51),PRESET
+680 LINE(20,49)-(21,49),PRESET
+690 LINE(21,50)-(23,50),PRESET
+700 GET@A(10,12)-(11,12),AK%
