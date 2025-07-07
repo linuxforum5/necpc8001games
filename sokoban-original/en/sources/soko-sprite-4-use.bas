@@ -3,6 +3,7 @@
 ---         1 : Láda
 ---         2,4,6,8 : Magick wall 8=Up, 2=Down, 4=Left, 6=Right
 ---         5 : Fal
+--- X,Y a játékos koordinátái a játékpálya cellakoordinátáiban. Egy cella két karakter egymás mellett.
 770 COLOR 1:PUT@A(X*2,Y)-(X*2+1,Y),AR%
 #include soko-keyboard-1235.bas
 --- #include soko-keyboard-ijkl.bas
@@ -52,7 +53,7 @@
 --- Red dots HX% és HY% a koordinátáik
 1310 A=0
 1320 READ X1,Y1:IF X1=0 THEN 1350
-1330 HX%(A)=X1*4+1:HY%(A)=Y1*4+1:PSET(X1*4+1,Y1*4+1,2):A=A+1
+1330 HX%(A)=X1*4+1:HY%(A)=Y1*4+1:PSET(X1*4+1,Y1*4+1,2):PSET(X1*4+2,Y1*4+1,2):A=A+1
 1340 GOTO 1320
 1350 HX%(A)=X1:HY%(A)=Y1
 1360 READ X,Y:A=0:RETURN
